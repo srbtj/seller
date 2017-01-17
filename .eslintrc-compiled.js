@@ -21,7 +21,10 @@ module.exports = {
     // 配置分号
     'semi': ["error", "always"],
     'indent': 0,
-    'key-spacing': ['error', { "beforeColon": false, "afterColon": true }]
+    'key-spacing': ['error', { "beforeColon": false, "afterColon": true }],
+    'space-before-function-paren': 0,
+    'space-before-blocks': 0,
+    'keyword-spacing': 0
   }
 };
 
