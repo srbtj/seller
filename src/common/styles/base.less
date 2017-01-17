@@ -1,0 +1,19 @@
+// 移动端 1px 处理
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+  .border-onePix{
+    &::after{
+      -webkit-transform: scaleY(.666);
+      transform: scaleY(.666);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .border-onePix{
+    &::after{
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+    }
+  }
+}
+
