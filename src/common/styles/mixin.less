@@ -1,3 +1,6 @@
+@png2x: '@2x.png';
+@png3x: '@3x.png';
+// 不同分辨率下  1px 处理;
 .border-onePix(@c){
   position: relative;
   &:after {
@@ -8,4 +11,24 @@
     border-bottom: 1px solid @c;
     content: ' ';
   }
+}
+
+// 不同分辨率下 加载不同的图片
+.bg-image(@url){
+  vertical-align: top;
+  background-image: url('@{url}@{png2x}');
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+    background-image: url('@{url}@{png3x}');
+  }
+  -webkit-background-size:cover;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// 字体大小及行高设置
+.fontSize(@fontSize,@fontWeight,@lineHeight){
+  font-size: @fontSize;
+  font-weight: @fontWeight;
+  line-height: @lineHeight;
 }

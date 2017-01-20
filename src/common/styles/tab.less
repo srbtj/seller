@@ -1,9 +1,11 @@
 @import "mixin";
+
+@rem : 50rem;
 .tab {
   display: flex;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 80 / @rem;
+  line-height: 80 / @rem;
   .border-onePix(rgba(7,17,27,.1));
   .tab-item{
     flex: 1;
@@ -11,10 +13,12 @@
 
     a{
       display: block;
-      font-size: 28px;
+      font-size: 28 / @rem;
+      line-height: 80 / @rem;
       color: rgb(77,85,93);
 
       &.active{
+        vertical-align: top;
         color: rgb(240,20,20);
       }
     }
