@@ -32,11 +32,13 @@
     </div>
     <!-- 显示详情图层 -->
     <transition name="maskFade">
-      <div class="mask"  v-show="hasShowMask">
+      <div class="mask" v-show="hasShowMask">
         <div class="mask-wrap">
           <div class="mask-content">
             <div class="title">{{ seller.name }}</div>
-            <div class="price">星条</div>
+            <div class="price">
+              <Star :size="48" :score="1.5"></Star>
+            </div>
             <div class="supports">
               <div class="support-title">
                 <span class="line"></span>
@@ -71,6 +73,7 @@
   @import "../../common/styles/header.less";
 </style>
 <script type="text/ecmascript-6">
+  import Star from 'components/star/Star';
   export default {
 //    props: ['seller']
     props: {
@@ -93,6 +96,9 @@
       maskClose() {
         this.hasShowMask = false;
       }
+    },
+    components: {
+      Star
     }
   };
 </script>

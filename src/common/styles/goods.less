@@ -1,0 +1,64 @@
+@import "mixin";
+
+@rem: 50rem;
+.goods {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 348 / @rem;
+  bottom: 116 / @rem;
+  background-color: greenyellow;
+  overflow: hidden;
+  .menu-wrapper {
+    // flex 三个属性的含意 : flex-grow(定义项目的放大比例) flex-shrink(定义项目的缩小比例) flex-basis(定义了分配多余空间之前所占的大小)
+    // flex 默认值: 0 1 auto
+    flex: 0 0 160 / @rem;
+    width: 160 / @rem; //解决安卓下兼容性问题
+    background-color: #f3f5f7;
+    ul {
+      .li-item {
+        height: 108 / @rem;
+        display: table;
+        padding: 0 24 / @rem;
+        width: 112 / @rem;
+
+        &.active {
+          background-color: #fff;
+          .text {
+            color: rgb(240, 20, 20);
+          }
+        }
+        .text {
+          display: table-cell;
+          vertical-align: middle;
+          width: 100%;
+          .border-onePix(rgba(7, 17, 27, .1));
+          .fontSize(24 / @rem, 200, 28 / @rem);
+          .icon {
+            width: 24 / @rem;
+            height: 24 / @rem;
+            display: inline-block;
+            &.decrease {
+              .bg-image('img/decrease_3');
+            }
+            &.discount {
+              .bg-image('img/discount_3');
+            }
+            &.guarantee {
+              .bg-image('img/guarantee_3');
+            }
+            &.invoice {
+              .bg-image('img/invoice_3');
+            }
+            &.special {
+              .bg-image('img/special_3');
+            }
+          }
+        }
+      }
+    }
+  }
+  .foods-wrapper {
+  }
+}
